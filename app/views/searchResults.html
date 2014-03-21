@@ -25,12 +25,18 @@
     <div class="sectionBody">
       <!-- If no ingredients are found display message below -->
       <div class="noResult" ng-show="suggestedRecipeError">We couldn't find any recipes with that list of ingredients.<br><br>Please add or remove an ingredient and try again.</div>
-      <div class="recipeBox animate-enter animate-leave" ng-repeat="recipe in searchResults.matches | limitTo:12" ng-click="getRecipe(recipe.id)">
+      <div class="recipeBox animate-enter animate-leave" ng-repeat="recipe in searchResults.matches | limitTo:12">
         <!-- added anchor for demo -->
-          <div class="recipe topcoat-button--large">
+          <div class="recipe topcoat-button--large" ng-click="show =!show">
             <div class="recipeImage"><img src={{recipe.smallImageUrls[0]}}></div>
             <div class="recipeName">{{recipe.recipeName}}</div>
           </div>
+          <div class="recipeDetails" ng-show="show">
+              <ul class="recipeIngredientList">
+                <li class="recipeIngredient" ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+              </ul>
+           <button ng-click="getRecipe(recipe.id)"> go to recipe</button>
+         </div>
           <!-- Commented Out for Demo -->
           <!-- <div class="recipeButtons">
             <div><button class="topcoat-button--large--cta" ng-click="getRecipe(recipe.id)">View Recipe</button></div>

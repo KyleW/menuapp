@@ -49,7 +49,7 @@ app.controller('searchResults', function($http,$location,$scope,ingredientMethod
     })
     .success(function(data, status) {
       // console.log("recipe success");
-      // console.log(data,status);
+      console.log(data,status);
       $scope.searchResults = data;
       if ($scope.searchResults.matches.length > 0){
         $scope.suggestedRecipeError = false;
