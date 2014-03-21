@@ -2,8 +2,6 @@
 
 describe('app', function() {
 
-
-
   beforeEach(function(){
     angular.mock.module('app');
   });

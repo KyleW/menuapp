@@ -1,5 +1,5 @@
 
- var app =angular.module('app', ['ngTouch','ngRoute','ngAnimate']);
+ var app = angular.module('app', ['ngTouch','ngRoute','ngAnimate']);
 
 
 
