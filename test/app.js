@@ -2,13 +2,16 @@
 
 describe('app', function() {
 
+
+
   beforeEach(function(){
     angular.mock.module('app');
   });
 
   describe(' landing controller',function(){
 
-    beforeEach(angular.mock.inject(function($rootScope, $controller){
+    beforeEach(
+      angular.mock.inject(function($rootScope, $controller){
       scope = $rootScope.$new();                //create an empty scope
       $controller('landing', {$scope: scope});  //declare the controller and inject our empty scope
     }));
@@ -46,10 +49,7 @@ describe('app', function() {
       // expect(scope.ingredients.length).toEqual(1000);
     }));
 
-
-
   });
-
 
   it('should have a sharedProperties service', inject(function(sharedProperties) {
 
